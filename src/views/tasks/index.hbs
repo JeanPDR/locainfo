@@ -1,0 +1,33 @@
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-12">
+
+    <table class="table-fixed w-full">
+      <thead>
+        <tr class="bg-green-500 text-white">
+          <th class="w-20 py-8 ...">INC</th>
+          <th class="w-1/4 py-8 ...">Title</th>
+          <th class="w-1/2 py-8 ...">Description</th>
+          <th class="w-28 py-8...">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each tasks}}
+        <tr>
+          <td class="py-8 px-6">{{inc}}</td>
+          <td class="p-8">{{title}}</td>
+          <td class="p-8 text-center">{{description}}</td>
+          <td class="p-8 flex">
+            <form action="/tasks/delete" method="POST" class="mx-2">
+              <input type="hidden" value="{{inc}}" name="inc">
+              {{!-- <button class="bg-red-500 text-white px-3 py-1 rounded-sm" type="submit">
+                <i class="fas fa-trash"></i></button>  Deletar Task--}}
+            </form>
+            {{!-- <a href="/tasks/edit/{{inc}}" class="bg-green-500 text-white px-3 py-1 rounded-sm">
+              <i class="fas fa-pen"></i></a>  Editar Tasck --}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
